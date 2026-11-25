@@ -1,6 +1,4 @@
-<
-
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,40 +6,30 @@
 
     <script>
 
-        // 1. VAR
         var age = 20;
         age = 30;
         var age = 40;
 
         console.log("Age:", age);
 
-
-        // 2. LET
         let course = "mern";
         course = "dsa";
 
         console.log("Course:", course);
 
-
-        // 3. CONST
         const college = "Sri Eshwar College of Engineering";
 
         console.log("College:", college);
 
-
-        // 4. LOGIN CONDITION
         let username = "sri";
         let password = "12345678";
 
         if (username == "sri" && password == "12345678") {
             console.log("Login successful");
-        }
-        else {
+        } else {
             console.log("Login failed");
         }
 
-
-        // 5. STUDENT FUNCTION
         function student(name, college = "Sri Eshwar") {
             console.log(`Hello ${name}, welcome to ${college} college`);
         }
@@ -51,8 +39,6 @@
         student("karthik", "Sri Eshwar");
         student("siva", "Sri Eshwar");
 
-
-        // 6. EMPLOYEE FUNCTION
         function employee(name, company = "Google", college = "Sri Eshwar") {
             console.log(`Hello ${name}, welcome to ${company} company. You studied at ${college} college.`);
         }
@@ -62,40 +48,30 @@
         employee("Siva", "Google", "KCT");
         employee("Karthik");
 
-
-        // 7. ARROW FUNCTION WITHOUT PARAMETER
         const hello = () => {
             console.log("Hello JavaScript");
         };
 
         hello();
 
-
-        // 8. ARROW FUNCTION WITH PARAMETER
         const greet = (name) => {
             console.log(`Hello ${name}, welcome to JavaScript`);
         };
 
         greet("Sakthi");
 
-
-        // 9. RETURN ARROW FUNCTION WITHOUT PARAMETER
         const message = () => {
             return "Hello JavaScript";
         };
 
         console.log(message());
 
-
-        // 10. RETURN ARROW FUNCTION WITH PARAMETER
         const welcome = (name) => {
             return `Hello ${name}, welcome to JavaScript`;
         };
 
         console.log(welcome("Sakthi"));
 
-
-        // 11. FUNCTION PASSING ANOTHER FUNCTION AS ARGUMENT
         function sece(stud) {
             console.log("Welcome to SECE");
             stud();
@@ -107,25 +83,19 @@
 
         sece(stud);
 
-
-        // 12. CALLBACK FUNCTION
         function seceCallback(callback) {
             console.log("Welcome to SECE");
             callback();
         }
 
-        seceCallback(function() {
+        seceCallback(function () {
             console.log("Welcome Students!");
         });
 
-
-        // 13. WHATSAPP FUNCTION
         function whatsapp() {
             console.log("I am sending a WhatsApp notification");
         }
 
-
-        // 14. NOTIFICATION FUNCTION
         function notification(callback) {
             console.log("Notification started");
             callback();
@@ -133,16 +103,13 @@
 
         notification(whatsapp);
 
-
-        // 15. PROMISE - FETCH API
         let fetch_api = new Promise((resolve, reject) => {
 
             let api = false;
 
             if (api) {
                 resolve("Fetched API data");
-            }
-            else {
+            } else {
                 reject("Failed to fetch");
             }
 
@@ -152,8 +119,6 @@
             .then(data => console.log(data))
             .catch(error => console.log(error));
 
-
-        // 16. PROMISE - ZOMATO FOOD ORDER WITH 5 SECONDS DELAY
         let zomato_order = new Promise((resolve, reject) => {
 
             console.log("Your Zomato order is processing...");
@@ -164,8 +129,7 @@
 
                 if (order) {
                     resolve("Food order placed successfully!");
-                }
-                else {
+                } else {
                     reject("Food order failed!");
                 }
 
@@ -177,6 +141,66 @@
             .then(data => console.log(data))
             .catch(error => console.log(error));
 
+        let emp = [
+            {
+                emp_name: "Sachin",
+                salary: 40000,
+                skills: ["python", "Java", "SQL"],
+
+                address: {
+                    city: "Coimbatore",
+                    state: "Tamil Nadu",
+                    pincode: 641025
+                }
+            },
+            {
+                emp_id: 101,
+                emp_name: "Priya",
+                salary: 60000,
+
+                company: {
+                    c1: "TCS",
+                    c2: "Accenture"
+                }
+            }
+        ];
+
+        console.log(emp[0].skills[1]);
+        console.log(emp[1].salary);
+        console.log(emp[1].company.c1);
+        console.log(emp[1].company.c2);
+
+        console.log(emp[0].address.city);
+        console.log(emp[0].address.state);
+        console.log(emp[0].address.pincode);
+
+        console.clear();
+
+        let stringify_data = JSON.stringify(emp);
+
+        console.log("String Data:", stringify_data);
+
+        let parsed_data = JSON.parse(stringify_data);
+
+        console.log("Parsed Data:", parsed_data);
+
+        let copied_data = { ...emp[1] };
+
+        copied_data.salary = 80000;
+
+        console.log("Original Data:", emp[1]);
+
+        console.log("Copied Data:", copied_data);
+
+        let deep_copy = structuredClone(emp[1]);
+
+        deep_copy.salary = 90000;
+
+        deep_copy.company.c1 = "Google";
+
+        console.log("Original Data:", emp[1]);
+
+        console.log("Deep Copied Data:", deep_copy);
 
     </script>
 
